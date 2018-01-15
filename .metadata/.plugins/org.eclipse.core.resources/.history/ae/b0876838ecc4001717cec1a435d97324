@@ -1,0 +1,36 @@
+package chapter7;
+import java.util.Scanner;
+import java.util.Random;
+
+//Project 7-2
+public class GuessingGameComp {
+	public static void main (String[]args){
+		Scanner scan = new Scanner(System.in);
+		Random generator = new Random();
+		System.out.println("Guessing Game");
+		System.out.print("Think of a number 1-100: ");
+		int num = scan.nextInt();
+		int guess2 = 0, guesses = 1;
+		int guess = generator.nextInt(100)+1;
+		System.out.println("Is it " + guess + "? Answer with (1) No, the number is less, (2) No, the number is greater, (3) Yes ");
+		int answer = scan.nextInt();
+		while (true){
+		if (answer == 1) { //guess is greater than the number
+			if (guess2 != 0){
+				while(guess>guess2)//want guess to be smaller than guess and bigger than guess 2 if possible
+					guess = generator.nextInt(guess)+1;
+			
+			System.out.println("Is it " + guess + "? Answer with (1) No, the number is less, (2) No, the number is greater, (3) Yes ");
+			}
+		} else if (answer == 2){ //guess is smaller than the number
+			guess2 = generator.nextInt(100-guess)+guess+1;
+			System.out.println("Is it " + guess2 + "? Answer with (1) No, the number is less, (2) No, the number is greater, (3) Yes ");
+		} else {
+			break;
+		}
+		answer = scan.nextInt();
+		
+		guesses++;
+		}
+	}
+}

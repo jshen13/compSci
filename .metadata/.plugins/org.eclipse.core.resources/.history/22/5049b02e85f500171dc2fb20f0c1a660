@@ -1,0 +1,17 @@
+package semester1Project;
+import java.util.*;
+public class ChatBotMain {
+	public static void main (String [] args){
+		Scanner scan = new Scanner(System.in);
+		String reply = "";
+		String opening = "Hi, my name is Chatbot";
+		String user = "";
+		ChatBot myChatBot = new ChatBot();
+		System.out.println(opening);
+		while (!user.equalsIgnoreCase("bye") || !user.equalsIgnoreCase("cya")){
+			user = scan.nextLine();
+			
+			System.out.println(myChatBot.findReply(user));
+		}
+	}
+}

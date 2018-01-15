@@ -1,0 +1,10 @@
+package semester1Project;
+
+public class chatBot {
+	public String findReply (String userInput){
+		String reply = "";
+		//run switch
+		
+		return reply;
+	}
+}

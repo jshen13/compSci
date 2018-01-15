@@ -1,0 +1,49 @@
+package chapter10;
+
+public class Array {
+	public double findMode(double [] myArray ){
+		int times = 0, lowCount = 1;
+		double low = -1; 
+		for(int i = 0; i < 9; i++){
+			double element = myArray[i];
+			for (int j = 0; j < 10; j++){
+				if (element == myArray[j])
+					times++;
+				if (times > lowCount)
+					low = myArray[j];
+			}
+			times = 0;
+		}
+		return low;
+	}
+	public double findMedian (double [] myArray){
+		int middle = (myArray.length/2);
+		double element = myArray[middle];
+		if (middle*2 == myArray.length){
+			element = (element + myArray[middle - 1])/2;
+		}
+		return element;
+	}
+	/*public String displayTable (double [] myArray) {
+		String display = "";
+		for (int i = 0; i < 11; i++){
+			
+			
+		}
+		int times = 0, lowCount = 0;
+		double low = -1; 
+		for(int i = 0; i < 10; i++){
+			double element = myArray[i];
+			for (int j = 1; j < 11; j++){
+				if (element == myArray[j]){
+					times++;	
+				}
+				if (times > lowCount){
+					low = myArray[j];
+				}
+			}
+		display += " ";
+		*/
+	
+	
+}

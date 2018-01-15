@@ -1,0 +1,70 @@
+package chapter10;
+
+public class Array {
+
+
+	private int [] occurence = new int[10];
+	public double findMode(double [] myArray ){
+		int times = 0, lowCount = 1;
+		double low = -1; 
+		//int [] occurence = new int[myArray.length];
+		for(int i = 0; i < 10; i++){
+			double element = myArray[i];
+			for (int j = 0; j < 10; j++){
+				if (element == myArray[j])
+					times++;
+				
+			}
+			if (times > lowCount){
+				low = myArray[i];
+				lowCount = times;
+			}
+			occurence[i] = times;
+			times = 0;
+		}
+		System.out.print("frequency:");
+		for(int element: occurence)
+			System.out.print(element + " ");
+		return low;
+	}
+	public double findMedian (double [] myArray){
+		int start = 1, end = myArray.length-1, index = 0;
+		double temp;
+		for (int i = 0; i < 7; i++){
+		double smallest = myArray[i];	
+			for (int j = start; j <= end; j++){
+				if (myArray[j] <= smallest){
+					smallest = myArray[j];
+					index = j;
+				}
+				
+			}
+			temp = myArray[i];
+			myArray[i] = smallest;
+			myArray[index] = temp;
+			start++;
+		}
+		for (double element: myArray)
+			System.out.print(element + " ");
+		int middle = (myArray.length/2);
+		double element = myArray[middle];
+		if (middle*2 == myArray.length){
+			element = (element + myArray[middle - 1])/2;
+		}
+		return element;
+	}
+	
+	
+	
+	public void displayTable (double [] myArray) {
+		System.out.print("\nYour numbers: ");
+		for (double element : myArray)
+			System.out.printf("%10.3f|", element);
+		System.out.print("\n Frequencies: ");
+		for (int element : occurence)
+			System.out.printf("%10d|", element);
+	}
+		
+	
+	
+}

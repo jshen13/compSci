@@ -1,0 +1,16 @@
+package semester1Project;
+import java.util.*;
+
+public class test {
+	public static void main (String [] args){
+		Scanner scan = new Scanner (System.in);
+		int words = 0; 
+		System.out.println("What is your string?");
+		String test = scan.nextLine();
+		Scanner scanstring = new Scanner(test);
+		while (scanstring.hasNext()){
+			words++;
+		}
+		System.out.println(words);
+	}
+}

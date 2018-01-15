@@ -1,0 +1,48 @@
+package chapter7;
+import java.util.Scanner;
+import java.util.Random;
+
+//Project 7-2
+public class GuessingGameComp {
+	public static void main (String[]args){
+		Scanner scan = new Scanner(System.in);
+		Random generator = new Random();
+		int num; //actual number
+		int upper=100, lower=0; //upper lower limit of guess
+		int guess2 = 0, guesses = 1;
+		int guess;
+		System.out.println("Guessing Game");
+		System.out.print("Think of a number 1-100: ");
+		num = scan.nextInt();
+		
+		guess = generator.nextInt(100)+1;
+		System.out.println("Is it " + guess + "? Answer with (1) No, the number is less, (2) No, the number is greater, (3) Yes ");
+		int answer = scan.nextInt();
+		while (true){
+		if (answer == 1) { //guess is greater than the number, need smaller guess
+			if (guess<upper || upper == 100)
+				upper = guess;
+			guess = generator.nextInt(upper-lower-1)+lower+1;
+			
+			
+			
+			/*if (guess2 != 0){
+				while(guess>guess2)//want guess to be smaller than guess and bigger than guess 2 if possible
+				
+			
+			System.out.println("Is it " + guess + "? Answer with (1) No, the number is less, (2) No, the number is greater, (3) Yes ");
+			}*/
+		} else if (answer == 2){ //guess is smaller than the number, need bigger guess
+			if (guess>lower || lower == 0)
+				lower = guess;
+			guess = generator.nextInt(upper-lower-1)+lower+1;
+		} else {
+			break;
+		}
+		System.out.println("Is it " + guess + "? Answer with (1) No, the number is less, (2) No, the number is greater, (3) Yes ");
+		answer = scan.nextInt();
+		
+		guesses++;
+		}
+	}
+}

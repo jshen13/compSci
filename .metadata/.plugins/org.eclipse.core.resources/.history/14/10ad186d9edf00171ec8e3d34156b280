@@ -1,0 +1,21 @@
+package chapter10;
+import java.util.Scanner;
+
+public class ArrayMain {
+	public static void main (String[] args){
+		Array array1 = new Array();
+		Scanner scan = new Scanner(System.in);
+		double [] theArray = new double [10];
+		for (int i = 1; i < 11; i++){
+			System.out.print("Input your number (" + i  + "): ");
+			double number = scan.nextDouble();
+			theArray[i-1] = number;
+		}
+		double mode = array1.findMode(theArray);
+		//double median = array1.findMedian(theArray);
+		System.out.println("Mode: " + mode);
+		//System.out.println("Median: " + median);
+		
+		
+	}
+}

@@ -1,0 +1,32 @@
+package chapter8;
+import java.io.*;
+import java.util.Scanner;
+
+//Project 8-4
+public class ComputerStoreInterestCalculator {
+	public static void main (String [] args){
+		Scanner scan = new Scanner (System.in);
+		double payment, balance, interest = 0, balanceAfter = 0, downpayment;
+		System.out.print("Enter the purchase price of the computer: ");
+		balance = scan.nextDouble();
+		downpayment = balance * 0.10;
+		balance -= downpayment;
+		System.out.println("Month |Total balance owned |Interest owed |Month:Princpal owed |Month:Payment |Balance after payment |");
+			for (int i = 1; balance > 0; i++) {
+				if (i%12 == 0){
+					interest = balance * 0.12;
+				}	
+				balance += interest/12;
+				payment = balance * 0.05;
+				balanceAfter = balance - payment;
+				System.out.printf("%5d |%19.2f |%13.2f |%19.2f |%14.2 |%22.2", i, balance, interest/12, payment-interest/12, payment, balanceAfter);
+				balance = balanceAfter;
+
+			}
+			
+		}
+		
+		
+		
+	}
+}

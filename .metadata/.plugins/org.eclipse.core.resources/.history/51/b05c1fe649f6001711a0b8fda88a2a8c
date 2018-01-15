@@ -1,0 +1,43 @@
+package semester1Project;
+import java.util.*;
+
+public class ChatBot {
+	public static int words = 0;
+	public String findReply (String userInput){
+		Random generator = new Random();
+		String reply = "";
+		//run switch
+		 
+		Scanner scannerString = new Scanner(userInput);
+		//count words
+		while (scannerString.hasNext()){
+			words++;
+		}
+		
+		String [] wordsArray = new String[words];
+		for (String element: wordsArray){
+			element = scannerString.next();
+			element.toLowerCase();
+		}
+		//for each word check if it matches a keyword
+		for (String element: wordsArray){
+			switch (element){
+			case "hi" : 
+				reply = "how are you?" + words;
+				break;
+			case "mother":
+				reply = "your mom";
+				break;
+			default:
+				reply = "I don't understand";
+			}
+			break;
+		}
+		return reply;
+	}
+	public static void main (String [] args){
+		ChatBot mytest = new ChatBot();
+		mytest.findReply("hello hi");
+		System.out.println(words);
+	}
+}

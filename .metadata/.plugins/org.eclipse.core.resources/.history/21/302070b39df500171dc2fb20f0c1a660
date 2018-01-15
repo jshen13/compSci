@@ -1,0 +1,20 @@
+package semester1Project;
+
+public class ChatBot {
+	public String findReply (String userInput){
+		String reply = "";
+		//run switch
+		switch (userInput){
+		case "hi" : 
+			reply = "how are you?";
+			break;
+		case "mother":
+			
+			reply = "your mom";
+			break;
+		default:
+			reply = "I don't understand";
+		}
+		return reply;
+	}
+}

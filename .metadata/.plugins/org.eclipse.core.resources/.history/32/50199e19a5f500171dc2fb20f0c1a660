@@ -1,0 +1,33 @@
+package semester1Project;
+import java.util.Scanner;
+
+public class ChatBot {
+	public String findReply (String userInput){
+		String reply = "";
+		//run switch
+		int words = 0; 
+		Scanner scannerString = new Scanner(userInput);
+		while (scannerString.hasNext()){
+			words++;
+		}
+		String [] wordsArray = new String[words];
+		for (String element: wordsArray){
+		
+		switch (element){
+
+		
+		
+		case "hi" : 
+			reply = "how are you?" + words;
+			break;
+		case "mother":
+			
+			reply = "your mom";
+			break;
+		default:
+			reply = "I don't understand";
+		}
+		}
+		return reply;
+	}
+}
