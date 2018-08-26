@@ -1,0 +1,11 @@
+package project7;
+
+public class GolfScoreCardMain extends GolfScoreCard {
+	public static void main (String [] args){
+		GolfScoreCard myScore = new GolfScoreCard();
+		System.out.println(myScore);
+		System.out.println("Handicap: " + getHandicap(72));
+		
+		
+	}
+}
